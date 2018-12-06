@@ -72,4 +72,5 @@ public class RestDatasourceConfig {
     public PlatformTransactionManager plandkTransactionManager(@Qualifier("restEntityManager") EntityManagerFactory entityManagerFactory) {
         return new JpaTransactionManager(entityManagerFactory);
     }
+
 }
