@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml"
 >
 <head>
     <title>Spring Home Example </title>
@@ -12,6 +12,86 @@
 <div class="container">
     <h2>You're are logged in correctly!</h2>
 
+    <div class="container-fluid">
+        <div class="">
+            <div class="span8">
+                <p class="text-info">Tart tiramisu ice cream cotton candy pudding. Sweet
+                    topping chocolate bar tootsie roll cotton candy brownie oat
+                    cake gummi bears. Danish cookie pudding powder. Pastry cotton
+                    candy tart topping. Dessert sesame snaps oat cake bear claw
+                    toffee jelly.</p>
+
+                <p class="lead">Delhas soufflé wypas.</p>
+
+                <p> Apple pie applicake sweet roll marzipan. Marzipan bear claw
+                    pudding jujubes sweet. Halvah sweet roll tiramisu liquorice
+                    candy canes halvah. Oat cake chocolate cake sugar plum sesame
+                    snaps. Bonbon danish oat cake chupa chups tart muffin tootsie
+                    roll sweet roll sweet roll. Sweet tootsie roll dragée cookie
+                    bear claw sweet roll jelly-o tootsie roll sweet.</p>
+            </div>
+        </div>
+
+        <div class="text" id="text-id">
+            <br/>
+            <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Pellentesque ut varius odio.
+            Phasellus
+            metus elit,
+            blandit ut metus et, laoreet pretium felis. Sed luctus lorem orci, sed consectetur elit blandit eget.
+            Vestibulum
+            finibus dui vitae lacus scelerisque, et laoreet lectus ultrices. Nulla sit amet porta nibh, ac gravida
+            sem.
+            Ut
+            at ex nec nisi consectetur convallis. Aenean vel nisl posuere, sodales lacus quis, sodales sapien.
+            Aenean
+            volutpat, orci vel lobortis finibus, turpis felis convallis felis, et pharetra turpis sapien sit amet
+            ante.
+            Nulla posuere justo vitae augue rutrum, ut lobortis ligula venenatis. Phasellus congue, massa ac tempor
+            tempor,
+            nunc nunc pretium ipsum, convallis fringilla risus ex sed nunc. Cras eu neque at tortor tempus imperdiet
+            id
+            eget
+            dolor. Mauris non metus quis massa mattis congue. Morbi gravida vel neque et commodo. Duis ultricies,
+            purus
+            ac
+            sagittis aliquam, tortor justo egestas nisi, eu interdum augue neque volutpat ligula. Aenean felis
+            massa,
+            cursus
+            non molestie at, scelerisque auctor diam. Nunc vestibulum aliquet tortor eget ultrices.
+        </div>
+        <div class="text">
+            <div th:if="${listOfBlogs != null}">
+                <p th:each="blog : ${listOfBlogs}" th:text="${blog.blog}"></p>
+            </div>
+        </div>
+    </div>
+
+    <!--<div sec:authorize="hasRole('ROLE_ADMIN')">-->
+    <div th:if="${showSection}">
+        <form th:action="@{/sendData}" method="post">
+            <textarea class="form-control" rows="3" name="blog" id="blog">
+            </textarea>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <input type="submit" class="btn btn-lg btn-primary btn-block" value="Send Data"/>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div>
+        <div>
+            <p>Logged user: <span sec:authentication="name">Bob</span></p>
+            <p>Logged user:
+            <p th:text="${username}"></p></p>
+        </div>
+        <div>
+            <!--<p>Roles: <span sec:authentication="principal.authorities">Default Roles!</span></p>-->
+            <p>Roles:
+            <p th:text="${authorities}"></p></p>
+        </div>
+    </div>
 </div>
 
 <div th:replace="fragments/footer :: footer"/>

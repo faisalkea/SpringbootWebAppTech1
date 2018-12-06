@@ -1,4 +1,4 @@
-package com.atkins.f2integrationjava.model;
+package com.faisaljarkass.demo.domains;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

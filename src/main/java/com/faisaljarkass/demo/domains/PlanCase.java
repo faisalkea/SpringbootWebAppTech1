@@ -1,4 +1,4 @@
-package com.atkins.f2integrationjava.model;
+package com.faisaljarkass.demo.domains;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -29,8 +29,6 @@ public class PlanCase implements Serializable {
 
     //private RawXmlString extensionData;
     private String extensionData;
-
-    private List<PartyGroupItem> securityGroups;
 
     public PlanCase() {
         this.links = new ArrayList();
@@ -140,14 +138,6 @@ public class PlanCase implements Serializable {
         this.extensionData = extensionData;
     }
 
-    public List<PartyGroupItem> getSecurityGroups() {
-        return securityGroups;
-    }
-
-    public void setSecurityGroups(List<PartyGroupItem> securityGroups) {
-        this.securityGroups = securityGroups;
-    }
-
     @Override
     public String toString() {
         return "PlanCase{" +
@@ -164,7 +154,6 @@ public class PlanCase implements Serializable {
                 ", links=" + links +
                 ", taskGuideKey='" + taskGuideKey + '\'' +
                 ", extensionData='" + extensionData + '\'' +
-                ", securityGroups=" + securityGroups +
                 '}';
     }
 }
