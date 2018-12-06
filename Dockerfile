@@ -18,6 +18,7 @@ RUN ["mvn", "dependency:resolve"]
 # Adding source, compile and package into a fat jar
 ADD src /SpringbootWepApp/src
 
+# Run maven commands
 RUN ["mvn", "clean"]
 RUN ["mvn", "package"]
 
