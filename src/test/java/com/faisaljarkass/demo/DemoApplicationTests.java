@@ -175,8 +175,6 @@ public class DemoApplicationTests {
                 System.out.println(output);
             }
             conn.disconnect();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
