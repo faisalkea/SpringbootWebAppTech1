@@ -75,6 +75,7 @@ public class DemoApplicationTests {
 
         RestTemplate restTemplate = new RestTemplateBuilder().basicAuthorization("test", "test").build();
         MyUser user = new MyUser(1L, "face", "test", null);
+
         NewCaseArgs args = new NewCaseArgs();
         args.setTitle("Test Title");
         args.setJournalPlanCode("Test JournalPlanCode");
