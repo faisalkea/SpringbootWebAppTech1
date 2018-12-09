@@ -1,6 +1,5 @@
 package com.faisaljarkass.demo.services;
 
-import com.faisaljarkass.demo.domains.Blog;
 import com.faisaljarkass.demo.domains.TestRestModel;
 import com.faisaljarkass.demo.repositories.TestRestRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,22 +19,17 @@ import java.util.logging.Logger;
 @Service
 public class TestRestServiceImpl implements TestRestService {
 
-    private static Logger logger = Logger.getLogger(TestRestServiceImpl.class.getName());
-
     private static final String WEB_SERVICE_URL = "localhost:8080/ajaxData";
-
+    private static Logger logger = Logger.getLogger(TestRestServiceImpl.class.getName());
+    private final RestTemplate restTemplate;
+    @Autowired
+    TestRestRepo testRestRepo;
     @Autowired
     @Qualifier("restEntityManager")
     private EntityManager entityManager;
-
     @Autowired
     @Qualifier("restDataSource")
     private DataSource dataSource;
-
-    @Autowired
-    TestRestRepo testRestRepo;
-
-    private final RestTemplate restTemplate;
 
     public TestRestServiceImpl(RestTemplateBuilder restTemplateBuilder,
                                @Value("${rest.test.username}") String username,

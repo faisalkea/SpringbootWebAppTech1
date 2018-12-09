@@ -1,7 +1,6 @@
 package com.faisaljarkass.demo.services;
 
 import com.faisaljarkass.demo.domains.TestRestModel;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

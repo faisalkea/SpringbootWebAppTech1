@@ -4,12 +4,6 @@ import com.faisaljarkass.demo.domains.Blog;
 import com.faisaljarkass.demo.domains.MyUser;
 import com.faisaljarkass.demo.services.BlogService;
 import com.faisaljarkass.demo.services.UserService;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import java.security.Principal;
-import java.util.Collection;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -46,10 +38,10 @@ public class HomeController {
 //        return "login";
 //    }
 
-    @RequestMapping(value = {"/","/login"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
     public ModelAndView login(@RequestParam(value = "error", required = false) String error,
                               @RequestParam(value = "logout", required = false) String logout,
-                              /*@ModelAttribute MyUser user,*/ Model model){
+            /*@ModelAttribute MyUser user,*/ Model model) {
         //logger.info("login method called with: " + user);
         logger.info("login method called with: ");
 
@@ -86,7 +78,7 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)
-    public String home(Model model, HttpServletRequest request){
+    public String home(Model model, HttpServletRequest request) {
 
         if (request.isUserInRole("ROLE_ADMIN")) {
             model.addAttribute("showSection", true);
@@ -96,12 +88,12 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public String logout(){
+    public String logout() {
         return "logout";
     }
 
     @RequestMapping(value = "/sendData", method = RequestMethod.POST)
-    public String sendData(@RequestParam String blog, Model model){
+    public String sendData(@RequestParam String blog, Model model) {
         //logger.info("login sendData called...");
 
         blogService.addBlog(blog);

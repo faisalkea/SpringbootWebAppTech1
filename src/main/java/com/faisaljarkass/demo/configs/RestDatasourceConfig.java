@@ -60,7 +60,7 @@ public class RestDatasourceConfig {
 
     @Bean(name = "restDataSource")
     @Primary
-    @ConfigurationProperties(prefix="spring.datasource.rest")
+    @ConfigurationProperties(prefix = "spring.datasource.rest")
     public DataSource plandkDataSource() {
         return DataSourceBuilder.create().build();
     }

@@ -14,9 +14,9 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public List<Blog> getAllBlogs() {
-        if(!flag){
+        if (!flag) {
             setupDummyData();
-            flag=true;
+            flag = true;
         }
         return list;
     }

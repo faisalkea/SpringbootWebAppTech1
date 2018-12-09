@@ -2,16 +2,16 @@ package com.faisaljarkass.demo.domains;
 
 import java.io.Serializable;
 
-public class Customer implements Serializable{
+public class Customer implements Serializable {
     private long id;
     private String name;
     private int age;
 
-    public Customer(){
+    public Customer() {
 
     }
 
-    public Customer(long id, String name, int  age){
+    public Customer(long id, String name, int age) {
         this.id = id;
         this.name = name;
         this.age = age;

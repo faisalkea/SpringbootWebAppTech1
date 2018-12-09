@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table( name = "testTable" )
+@Table(name = "testTable")
 public class TestRestModel {
 
     @Id

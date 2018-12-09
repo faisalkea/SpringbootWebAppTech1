@@ -29,7 +29,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -131,7 +130,7 @@ public class DemoApplicationTests {
     }
 
     @Test
-    public void testJaxrs(){
+    public void testJaxrs() {
         Client client = ClientBuilder.newClient();
         WebTarget target = client.target("http://localhost:5000/api/post");
         Customer customer = new Customer(1, "Face", 32);
