@@ -50,14 +50,18 @@ public class DemoApplicationTests {
 
     @Test
     public void testRestAuth() {
-        RestTemplate restTemplate = new RestTemplateBuilder().basicAuthorization("test", "test").build();
+        RestTemplate restTemplate = new RestTemplateBuilder()
+                .basicAuthorization("test", "test").build();
+
         Map<String, String> map = new HashMap<>();
         map.put("jobInstanceId", "jobInstanceIdTEST");
         map.put("successUrl", "successUrlTEST");
         map.put("failUrl", "failUrlTEST");
+
         //TestRestModel[] list = restTemplate.getForObject(restTestUrl, TestRestModel[].class);
         TestRestModel[] list = restTemplate.getForObject(restTestUrlNoParam, TestRestModel[].class, map);
-        Arrays.stream(list).forEach(element -> System.out.println(element));
+
+        Arrays.stream(list).forEach(System.out::println);
 
         assertEquals(2, list.length);
     }
