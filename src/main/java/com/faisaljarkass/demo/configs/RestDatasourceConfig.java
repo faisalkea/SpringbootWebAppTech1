@@ -45,7 +45,6 @@ public class RestDatasourceConfig {
         properties.put("spring.jpa.properties.hibernate.format_sql", environment.getProperty("spring.jpa.properties.hibernate.format_sql"));
 
         properties.put("spring.jpa.hibernate.ddl-auto", environment.getProperty("spring.jpa.hibernate.ddl-auto"));
-        properties.put("spring.jpa.properties.hibernate.format_sql", environment.getProperty("spring.jpa.properties.hibernate.format_sql"));
 
         properties.put("hibernate.hbm2ddl.auto", environment.getProperty("spring.jpa.hibernate.ddl-auto"));
         properties.put("hibernate.dialect", environment.getProperty("spring.jpa.database-platform"));
