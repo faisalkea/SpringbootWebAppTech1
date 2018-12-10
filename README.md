@@ -2,4 +2,4 @@
 
 A blog Spring boot WebApp for 2nd semester KEA.
 
-The beginners journey...
+The beginners journey!
